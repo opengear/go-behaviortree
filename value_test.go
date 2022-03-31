@@ -99,7 +99,7 @@ func TestNode_Value_simple(t *testing.T) {
 	if v := n2.Value(k1{}); v != `v1` {
 		t.Error(v)
 	}
-	if frame, _ := runtime.CallersFrames(valueDataCaller[:]).Next(); frame.Function != `github.com/joeycumines/go-behaviortree.Node.valueSync` {
+	if frame, _ := runtime.CallersFrames(valueDataCaller[:]).Next(); frame.Function != `bitbucket.org/opengear/go-behaviortree.Node.valueSync` {
 		t.Error(frame)
 	}
 	if v := n2.Value(k2{}); v != nil {
