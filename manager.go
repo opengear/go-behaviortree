@@ -18,7 +18,7 @@ package behaviortree
 
 import (
 	"errors"
-	"github.com/joeycumines/go-bigbuff"
+	"bitbucket.org/opengear/go-bigbuff"
 	"sync"
 )
 
