@@ -60,22 +60,22 @@ func TestNode_String(t *testing.T) {
 		{
 			Name:  `single sequence`,
 			Node:  New(Sequence),
-			Value: "[0x1 printer_test.go:62 0x2 sequence.go:21]  bitbucket.org/opengear/go-behaviortree.TestNode_String | bitbucket.org/opengear/go-behaviortree.Sequence",
+			Value: "[0x1 printer_test.go:62 0x2 sequence.go:21]  github.com/opengear/go-behaviortree.TestNode_String | github.com/opengear/go-behaviortree.Sequence",
 		},
 		{
 			Name:  `single closure`,
 			Node:  New(func(children []Node) (Status, error) { panic(`TestNode_String`) }),
-			Value: "[0x1 printer_test.go:67 0x2 printer_test.go:67]  bitbucket.org/opengear/go-behaviortree.TestNode_String | bitbucket.org/opengear/go-behaviortree.TestNode_String.func1",
+			Value: "[0x1 printer_test.go:67 0x2 printer_test.go:67]  github.com/opengear/go-behaviortree.TestNode_String | github.com/opengear/go-behaviortree.TestNode_String.func1",
 		},
 		{
 			Name:  `nil tick`,
 			Node:  New(nil),
-			Value: "[0x1 printer_test.go:72 0x0 -]  bitbucket.org/opengear/go-behaviortree.TestNode_String | <nil>",
+			Value: "[0x1 printer_test.go:72 0x0 -]  github.com/opengear/go-behaviortree.TestNode_String | <nil>",
 		},
 		{
 			Name:  `example counter`,
 			Node:  newExampleCounter(),
-			Value: "[0x1 example_test.go:47 0x2 selector.go:21]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.Selector\n├── [0x3 example_test.go:49 0x4 sequence.go:21]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.Sequence\n│   ├── [0x5 example_test.go:51 0x6 example_test.go:52]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func3\n│   ├── [0x7 example_test.go:40 0x8 example_test.go:41]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func2\n│   └── [0x9 example_test.go:32 0xa example_test.go:33]  bitbucket.org/opengear/go-behaviortree.newExampleCounter.func1 | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func1.1\n└── [0xb example_test.go:62 0x4 sequence.go:21]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.Sequence\n    ├── [0xc example_test.go:64 0xd example_test.go:65]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func4\n    ├── [0x7 example_test.go:40 0x8 example_test.go:41]  bitbucket.org/opengear/go-behaviortree.newExampleCounter | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func2\n    └── [0x9 example_test.go:32 0xa example_test.go:33]  bitbucket.org/opengear/go-behaviortree.newExampleCounter.func1 | bitbucket.org/opengear/go-behaviortree.newExampleCounter.func1.1",
+			Value: "[0x1 example_test.go:47 0x2 selector.go:21]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.Selector\n├── [0x3 example_test.go:49 0x4 sequence.go:21]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.Sequence\n│   ├── [0x5 example_test.go:51 0x6 example_test.go:52]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.newExampleCounter.func3\n│   ├── [0x7 example_test.go:40 0x8 example_test.go:41]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.newExampleCounter.func2\n│   └── [0x9 example_test.go:32 0xa example_test.go:33]  github.com/opengear/go-behaviortree.newExampleCounter.func1 | github.com/opengear/go-behaviortree.newExampleCounter.func1.1\n└── [0xb example_test.go:62 0x4 sequence.go:21]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.Sequence\n    ├── [0xc example_test.go:64 0xd example_test.go:65]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.newExampleCounter.func4\n    ├── [0x7 example_test.go:40 0x8 example_test.go:41]  github.com/opengear/go-behaviortree.newExampleCounter | github.com/opengear/go-behaviortree.newExampleCounter.func2\n    └── [0x9 example_test.go:32 0xa example_test.go:33]  github.com/opengear/go-behaviortree.newExampleCounter.func1 | github.com/opengear/go-behaviortree.newExampleCounter.func1.1",
 		},
 	} {
 		t.Run(testCase.Name, func(t *testing.T) {
@@ -183,7 +183,7 @@ func TestDefaultPrinterInspector_nil(t *testing.T) {
 				`0x0`,
 				`-`,
 			},
-			`bitbucket.org/opengear/go-behaviortree.dummyNode | <nil>`,
+			`github.com/opengear/go-behaviortree.dummyNode | <nil>`,
 		},
 	); diff != nil {
 		t.Errorf("unexpected diff:\n%s", strings.Join(diff, "\n"))
@@ -199,7 +199,7 @@ func TestDefaultPrinterInspector_nil(t *testing.T) {
 				fmt.Sprintf(`%p`, tick),
 				`selector.go:21`,
 			},
-			`<nil> | bitbucket.org/opengear/go-behaviortree.Selector`,
+			`<nil> | github.com/opengear/go-behaviortree.Selector`,
 		},
 	); diff != nil {
 		t.Errorf("unexpected diff:\n%s", strings.Join(diff, "\n"))

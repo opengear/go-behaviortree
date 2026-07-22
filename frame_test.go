@@ -34,7 +34,7 @@ func TestNode_Frame(t *testing.T) {
 			Name: `nn with value`,
 			Node: nn(nil, nil).WithValue(1, 2),
 			Frame: &Frame{
-				Function: `bitbucket.org/opengear/go-behaviortree.Node.WithValue.func1`,
+				Function: `github.com/opengear/go-behaviortree.Node.WithValue.func1`,
 				File:     `value.go`,
 			},
 		},
@@ -42,13 +42,13 @@ func TestNode_Frame(t *testing.T) {
 			Name: `nn with value explicit frame`,
 			Node: nn(nil, nil).WithValue(vkFrame{}, &Frame{
 				PC:       0x568dc0,
-				Function: "bitbucket.org/opengear/go-behaviortree.glob..func1.1",
-				File:     "C:/Users/under/go/src/bitbucket.org/opengear/go-behaviortree/behaviortree.go",
+				Function: "github.com/opengear/go-behaviortree.glob..func1.1",
+				File:     "C:/Users/under/go/src/github.com/opengear/go-behaviortree/behaviortree.go",
 				Line:     53,
 				Entry:    0x568dc0,
 			}),
 			Frame: &Frame{
-				Function: "bitbucket.org/opengear/go-behaviortree.glob..func1.1",
+				Function: "github.com/opengear/go-behaviortree.glob..func1.1",
 				File:     "behaviortree.go",
 			},
 		},
@@ -99,7 +99,7 @@ func TestTick_Frame(t *testing.T) {
 			Name: `sequence`,
 			Tick: Sequence,
 			Frame: &Frame{
-				Function: `bitbucket.org/opengear/go-behaviortree.Sequence`,
+				Function: `github.com/opengear/go-behaviortree.Sequence`,
 				File:     `sequence.go`,
 			},
 		},
